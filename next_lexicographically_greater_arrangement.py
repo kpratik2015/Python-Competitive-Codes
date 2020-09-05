@@ -16,7 +16,7 @@ def nextPermutation(nums: List[int]) -> None:
     nums.reverse()
     return 
   k = i - 1    # k points to element which breaks ascending trend
-  while nums[j] <= nums[k]: 
+  while nums[j] <= nums[k]: # decrement j until nums[j] is smaller or equal to element at k
     j -= 1
   nums[k], nums[j] = nums[j], nums[k]  
   l, r = k+1, len(nums)-1  # reverse the second part
