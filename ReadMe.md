@@ -77,3 +77,26 @@ while l < r:
     r -= 1
     total += r_max - bars[r]
 ```
+
+## Dynamic Programming
+
+Start with 2D array i.e. matrix `dp = [[False for _ in range(len(innerLoopVar)+1)] for i in range(len(outerLoopVar)+1)]` with everything `False`.
+Current denotes: `dp[i][j]`.
+Two loops start from 1: `for i in range(1, len(outerLoopVar)+1): for j in range(1, len(innerLoopVar)+1):`
+
+For wildcard matching
+
+```
+# p -> pattern
+# s -> string
+
+# Special initialization for *
+for j in range(1, len(p)+1):
+  if p[j-1] != '*':
+      break
+  dp[0][j] = True # marking one ahead as True as 0th is reserved True
+
+# Two conditions
+1. p[j-1] in {s[i-1], '?'}: current = diagonal
+2. p[j-1] == '*': current = left or top
+```
