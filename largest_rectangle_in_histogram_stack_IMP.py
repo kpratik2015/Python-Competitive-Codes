@@ -1,5 +1,7 @@
 # Problem: https://leetcode.com/problems/largest-rectangle-in-histogram/
 
+# CHECK ALSO maximal_rectangle_stack
+
 class Solution:
     def largestRectangleArea(self, height):
         height.append(0) # appending 0 at the end of height list for our convenience
